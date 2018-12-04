@@ -16,15 +16,14 @@ int main()
         cin>>b[f];
     }
 
-    char c=b[0].at(0);
-    cout << c;
     unsigned int amountc=0;
     for(int i=0;i<b[0].length();i++)
     {
-        if(b[0].at(i)==c)
+        if(b[0].at(i)==b[0].at(0))
         {
             amountc+=1;
         }
+        else{}
     }
     cout << amountc;
     return 0;
