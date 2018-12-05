@@ -18,28 +18,27 @@ int main()
 
     unsigned int amount[24];
     char acter[24];
-    for(int j=0;j<a;j++)
-    {
-        for(int i=0;i<b[j].length();i++)
+/*    for(int j=0;j<a;j++)
+    {*/
+        int l=0;
+        for(unsigned int i=0;i<b[0].length();i++)
         {
-            if(b[j].at(i)==b[j].at(0))
+            if(acter[l]!=b[0].at(i))
             {
-                amount[0]+=1;
-            }
-            else if(b[j].at(i)==b[j].at(i-1))
-            {
-                amount[i-1]+=1;
+                acter[l]=b[0].at(i);
+                amount[l]+=1;
+                l++;
             }
             else
             {
-                acter[i]=b[j].at(i);
+                amount[i]+=1;
             }
         }
-    }
+ //   }
     int k=0;
     while(amount[k]!=0)
     {
-        cout << acter[k] << amount[k];
+        cout << acter[k] << "_" << amount[k];
         k++;
     }
     return 0;
