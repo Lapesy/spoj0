@@ -16,15 +16,31 @@ int main()
         cin>>b[f];
     }
 
-    unsigned int amountc=0;
-    for(int i=0;i<b[0].length();i++)
+    unsigned int amount[24];
+    char acter[24];
+    for(int j=0;j<a;j++)
     {
-        if(b[0].at(i)==b[0].at(0))
+        for(int i=0;i<b[j].length();i++)
         {
-            amountc+=1;
+            if(b[j].at(i)==b[j].at(0))
+            {
+                amount[0]+=1;
+            }
+            else if(b[j].at(i)==b[j].at(i-1))
+            {
+                amount[i-1]+=1;
+            }
+            else
+            {
+                acter[i]=b[j].at(i);
+            }
         }
-        else{}
     }
-    cout << amountc;
+    int k=0;
+    while(amount[k]!=0)
+    {
+        cout << acter[k] << amount[k];
+        k++;
+    }
     return 0;
 }
